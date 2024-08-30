@@ -1,0 +1,60 @@
+[
+    {
+      "id":1,
+      "name":"meena",
+      "sellRent":2,
+      "price":123000,
+      "discription":"big row houses in single row",
+      "image":"img1.jpg",
+      "BHK":2,
+      "PType":"house",
+      "Ftype":"semi",
+      "builtArea": 900,
+      "carpetArea":800
+  
+  },
+  {
+    "id":2,
+    "name":"Anjali",
+    "sellRent":1,
+    "price":1123000,
+    "discription":"big row houses in single row",
+    "image":"img2.jpg",
+    "BHK":1,
+    "PType":"house",
+    "Ftype":"semi",
+    "builtArea": 1000,
+    "carpetArea":800
+  },
+
+  {
+    "id":3,
+    "name":"Anil",
+    "sellRent":2,
+    "price":123300,
+    "discription":"big row houses in single row",
+    "image":"img3.jpg",
+    "BHK":2,
+    "PType":"banglow",
+    "Ftype":"furnished",
+    "builtArea": 900,
+    "carpetArea":800
+  
+  
+  },
+  {
+    "id":4,
+    "name":"seema",
+    "sellRent":2,
+    "price":123000,
+    "discription":"big row houses in single row",
+    "image":"img4.png",
+    "BHK":2,
+    "PType":"house",
+    "Ftype":"semi",
+    "builtArea": 900,
+    "carpetArea":800
+   
+  
+  }
+  ]

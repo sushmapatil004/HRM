@@ -1,0 +1,28 @@
+
+<div class="card">
+    <div class="img_wrapper">
+      <img class="card-img-top" *ngIf="property.image" src="assets\images\{{property.image}}" alt="home" />
+      <img class="card-img-top" *ngIf="!property.image" src="assets\images\home1.png" alt="home" />
+
+      <ul class="list-inline text-center member">
+        <li class="list-inline-item" > 
+          <button class="btn btn-primary" [routerLink]="['/property-detail', property.id]">E</button>
+        </li>
+        <li class="list-inline-item">
+          <button class="btn btn-primary">C</button>
+                        </li>
+                       
+      </ul>
+    </div>
+          <div class="card-body p-2">
+            <h4> Name: {{property.name}}</h4>
+            <h5> Property Type: {{property.sellRent}}</h5>
+            
+            <h5> Price: {{property.price}}</h5>
+            <h5> Description : {{property.discription}}</h5>
+          
+          </div>
+  </div>
+
+
+

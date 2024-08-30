@@ -1,0 +1,119 @@
+
+
+
+<div class="row">
+  <div class="col-12">
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="propertyForm">
+        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+          <ng-template matStepLabel>Basic Info</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Last name, First name"  formControlName="name" required>
+          </mat-form-field>
+          &nbsp;
+          <mat-label>Select For:</mat-label>
+        
+
+          <mat-radio-group aria-label="Select an option" appearance="fill" formControlName="sellRent">
+            <mat-radio-button value="1">Sell</mat-radio-button>&nbsp;
+            <mat-radio-button value="2">Rent</mat-radio-button>
+          </mat-radio-group>
+<br>
+          <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Price" formControlName="price" required>
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field appearance="fill">
+            <mat-label>BHK</mat-label>
+            <input matInput placeholder="BHK " formControlName="BHK" required>
+          </mat-form-field>
+        <br>
+        
+        <mat-label>Property Type</mat-label>
+       <br>
+       <br>
+
+    
+        <mat-radio-group aria-label="Select an option" appearance="fill" formControlName="PType">
+          <mat-radio-button value="1">Row House</mat-radio-button>&nbsp;
+          <mat-radio-button value="2">Apartmet</mat-radio-button>
+          <mat-radio-button value="2">Villa</mat-radio-button>
+
+        </mat-radio-group>
+<br>
+
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Built-up Area</mat-label>
+  <input matInput placeholder="Built-up Area" formControlName="builtArea" required>
+</mat-form-field>
+&nbsp; &nbsp;
+<mat-form-field appearance="fill">
+  <mat-label>Carpet Area</mat-label>
+  <input matInput placeholder="Carpet Area" formControlName="carpetArea" required>
+</mat-form-field>
+<br>
+<mat-label>Furniture Type</mat-label>
+<br>
+<br>
+<mat-radio-group aria-label="Select an option" appearance="fill" formControlName="Ftype">
+  <mat-radio-button value="1">Empty</mat-radio-button>&nbsp;
+  <mat-radio-button value="2">Semi</mat-radio-button>
+  <mat-radio-button value="2">Full </mat-radio-button>
+
+</mat-radio-group> &nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button class="btn btn-primary" matStepperNext>Next</button>
+
+         
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="propertyForm" label="Property Details">
+        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="discription" placeholder="Enter discription">
+
+
+  </mat-form-field>
+         
+          <div>
+            <button class="btn btn-primary" matStepperPrevious>Back</button> &nbsp;
+            <button class="btn btn-primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="propertyForm" label="Photo">
+        <form [formGroup]="propertyForm">
+          <mat-form-field appearance="fill">
+            <mat-label>Upload Image</mat-label>
+                       <input matInput [value]="imageFile?.name || ''" placeholder="Choose a file" readonly>
+    <input type="file" (change)="onImageChange($event)" hidden #fileInput>
+    <button class="btn btn-info" type="button" (click)="fileInput.click()">Browse</button>
+          </mat-form-field>
+          <span *ngIf="imageError" class="error-block">{{ imageError }}</span>
+
+          <div>
+            
+
+            <button class="btn btn-primary" matStepperPrevious>Back</button> &nbsp;
+            <button class="btn btn-success" [disabled]="propertyForm.invalid" type="submit" >Submit</button> &nbsp;
+
+          <button class="btn btn-danger" (click)="stepper.reset()">Reset</button>
+          </div>
+        </form>
+      </mat-step>
+   
+    </mat-stepper>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+

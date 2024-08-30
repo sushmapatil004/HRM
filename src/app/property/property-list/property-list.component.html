@@ -1,0 +1,30 @@
+
+<div class="row">
+    <div class="col-md-2">
+        <label style="margin-left: 70px;">Filter By Name:</label>
+    </div>   
+<div class="col-md-4">
+    <input class="form-control" placeholder="Search property" [(ngModel)]='name'>&nbsp; &nbsp;
+</div>
+<div class="col-md-3">
+    <button class="btn btn-primary" (click)="onNameFilter()">Search</button> &nbsp;
+    <button class="btn btn-primary" (click)="onNameFilterClear()"> Clear</button>
+</div>
+<div class="col-md-3">
+    <label>Sort By</label>
+    <select class="form-control" [(ngModel)]='sorybyparam'>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+    </select>
+    </div>
+</div>
+<div class="row">
+    <div *ngFor="let item of properties|filter:searchName:'name'| sort:[sorybyparam]" class="shadow-lg col-sm-3 p-3">
+<app-property-card [property]="item"></app-property-card>
+    </div>
+</div>
+
+
+
+
+
